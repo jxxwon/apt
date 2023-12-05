@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/*header*/
+.homeContainer{width:1200px; margin:0 auto;}
+
+.headContainer{overflow:hidden;}
+
+.logo{width:100px;}
+.logo a {text-align:center;}
+
+.headerMenu{float:right;}
+.headerMenu ul{display:table;}
+.headerMenu ul li{display: table-cell; padding-right:10px;}
+.headerMenu ul li:last-child{padding-right:0px;}
+
+.headerNav ul{display:table; width:100%;}
+.headerNav ul li{display:table-cell; text-align:center;}

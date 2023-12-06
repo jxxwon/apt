@@ -32,6 +32,12 @@ public class MemberController {
 		return "redirect:/main";
 	}
 	
+	@RequestMapping("logout")
+	public String logout() {
+		service.logout();
+		return "redirect:/main";
+	}
+	
 	@RequestMapping("member/register")
 	public String register() {
 		return "member/register";

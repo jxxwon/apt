@@ -51,7 +51,7 @@
 						<li id = "userMenu"><a href = "/main">마이페이지</a></li>
 						<li id = "adminMenu"><a href = "/main">관리자페이지</a></li>
 						<li><a href = "/main">알림</a></li>
-						<li><a href = "/main">로그아웃</a></li>
+						<li><a href = "/logout">로그아웃</a></li>
 					</ul>
 				</div>
 			</div>

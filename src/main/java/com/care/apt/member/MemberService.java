@@ -25,4 +25,8 @@ public class MemberService {
 		session.setAttribute("status", member.getStatus());
 		return "로그인 성공";
 	}
+
+	public void logout() {
+		session.invalidate();
+	}
 }

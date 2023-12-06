@@ -88,6 +88,8 @@ input[type="password"]:-input-placeholder {color:#7e7c7c;}
 input[type="password"]:-ms-input-placeholder {color:#7e7c7c;}
 input[type="password"]::-moz-input-placeholder {color:#7e7c7c;}
 
+input[type="button"] {cursor:pointer;}
+
 textarea {width:100%; border:1px solid #ddd; box-sizing:border-box; padding:10px;}
 textarea::-webkit-input-placeholder {color:#7e7c7c;}
 textarea:-input-placeholder {color:#7e7c7c;}

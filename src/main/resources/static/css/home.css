@@ -19,6 +19,11 @@
 	width:100%;
 	height:40px;
 	text-align:right;
+	margin-bottom:10px;
+}
+
+.headerMenu .welcome{
+	margin-bottom:10px;
 }
 .headerMenu ul li{
 	display:inline-block;

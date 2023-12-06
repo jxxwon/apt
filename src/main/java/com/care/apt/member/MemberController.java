@@ -25,11 +25,15 @@ public class MemberController {
 			return "member/login";
 		}
 		String result = service.loginProc(id, pw);
-		System.out.println(result);
 		if(result.equals("로그인 성공") == false) {
 			ra.addFlashAttribute("msg", result);
 			return "redirect:/member/login";
 		}
 		return "redirect:/main";
+	}
+	
+	@RequestMapping("member/register")
+	public String register() {
+		return "member/register";
 	}
 }

@@ -31,9 +31,18 @@
 						<th>비밀번호</th>
 						<td><input type = "password" id = "pw" name = "pw"></td>
 					</tr>
+					<tr>
+						<td colspan=2>
+							<input type = "button" value = "로그인" class = "loginBtn" onclick="loginChk()">
+							<input type = "button" value = "회원가입" class = "regBtn">
+						</td>
+					</tr>
+					<tr>
+						<td colspan=2>
+							<input type = "button" value = "비밀번호 찾기" class = "findPwBtn">
+						</td>
+					</tr>
 				</table>
-				<input type = "button" value = "로그인" onclick="loginChk()">
-				<input type = "button" value = "회원가입">
 			</form>
 		</div>
 	</div>

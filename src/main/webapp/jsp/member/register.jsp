@@ -9,7 +9,7 @@
 <title>트리더힐 - 회원가입</title>
 <link href="${context}css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${context}css/member.css" rel="stylesheet" type="text/css"/>
-<script src = "${context}javaScript/member.js"></script>
+<script src="${context}javaScript/member.js"></script>
 </head>
 <body>
 	<c:import url = "${context}header"/>

@@ -25,24 +25,26 @@ document.addEventListener('DOMContentLoaded', function() {
 /*회원가입 - 동 선택에 따른 호수 변화*/
 document.addEventListener('DOMContentLoaded', function(){
 	let complex = document.getElementById('complex');
-	let unit = document.getElementById('unit');
-	
-	complex.addEventListener('change', function(){
-		unit.disabled = false;
-		unit.innerHTML = '<option selected>호수 선택</option>';
+	if(complex){
+		let unit = document.getElementById('unit');
 		
-		const complexOptions = {
-	        "101": ["101", "102", "201", "202", "301", "302", "401", "402", "501", "502"],
-	        "102": ["101", "102", "103", "201", "202", "203", "301", "302", "303", "401", "402", "403", "501", "502", "503", "601", "602", "603", "701", "702", "703"],
-	        "103": ["101", "102", "103", "104", "301", "302"],
-	        "104": ["101", "102", "103", "104", "301", "302"],
-		}
-		 if (complexOptions.hasOwnProperty(complex.value)) {
-	        complexOptions[complex.value].forEach(optionValue => {
-	            unit.options.add(new Option(optionValue));
-	        });
-	    }
-	});
+		complex.addEventListener('change', function(){
+			unit.disabled = false;
+			unit.innerHTML = '<option selected>호수 선택</option>';
+			
+			const complexOptions = {
+		        "101": ["101", "102", "201", "202", "301", "302", "401", "402", "501", "502"],
+		        "102": ["101", "102", "103", "201", "202", "203", "301", "302", "303", "401", "402", "403", "501", "502", "503", "601", "602", "603", "701", "702", "703"],
+		        "103": ["101", "102", "103", "104", "301", "302"],
+		        "104": ["101", "102", "103", "104", "301", "302"],
+			}
+			 if (complexOptions.hasOwnProperty(complex.value)) {
+		        complexOptions[complex.value].forEach(optionValue => {
+		            unit.options.add(new Option(optionValue));
+		        });
+		    }
+		});
+	}
 });
 
 /*아이디 체크 관련*/
@@ -95,10 +97,10 @@ function idChkresProc(){
 
 /*비밀번호 체크*/
 document.addEventListener('DOMContentLoaded', function(){
+	let pwLbl = document.getElementById('pwLbl');
 	if(pwLbl){
 		let pw = document.getElementById('pw');
 		let confirmPw = document.getElementById('confirmPw');
-		let pwLbl = document.getElementById('pwLbl');
 		confirmPw.addEventListener('keyup', function(){
 			if(pw.value !== confirmPw.value){
 				pwLbl.style.display = 'block';

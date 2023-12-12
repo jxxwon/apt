@@ -19,7 +19,7 @@
     			defaultMenu.style.display = 'none';
     			loginMenu.style.display = 'block';
     		}
-    		if(status != 'M'){
+    		if(status != '0'){
     			document.getElementById('adminMenu').style.display = 'none';
     		} else {
     			document.getElementById('userMenu').style.display = 'none';

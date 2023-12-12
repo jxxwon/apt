@@ -44,6 +44,9 @@
 }
 .headerMenu ul li:last-child{padding-right:0;}
 .headerMenu ul li a{display:block;}
+.headerMenu ul li a:hover{
+	font-weight:bold;
+}
 
 .headerNav{
 	width:100%;

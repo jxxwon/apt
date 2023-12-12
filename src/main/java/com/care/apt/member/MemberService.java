@@ -20,8 +20,8 @@ public class MemberService {
 			return "등록되지 않은 아이디입니다.";
 		}
 		
-		String dbPw = member.getPw();
-		if(!pw.equals(dbPw)) {
+		BCryptPasswordEncoder bpe = new BCryptPasswordEncoder();
+		if(!bpe.matches(pw, member.getPw())) {
 			return "비밀번호를 확인하세요.";
 		}
 		session.setAttribute("id", id);

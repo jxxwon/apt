@@ -7,11 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>트리더힐에 오신 것을 환영합니다.</title>
+<link href="${context}css/common.css" rel="stylesheet" type="text/css"/>
+<link href="${context}css/home.css" rel="stylesheet" type="text/css"/>
+<c:import url = "${context}header"/>
 </head>
 <body>
-	<c:import url = "${context}header"/>
 		<div class = "mainContainer">
-			<div class = "inner visual">
+			<div class = "visual">
 				공지사항
 				일정
 			</div>

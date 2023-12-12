@@ -29,7 +29,7 @@
 </head>
 <body onload="headerLoginChk()">
 	<div id="wrap">
-		<div class = "homeContainer">
+		<div class = "headerContainer">
 			<div class = "headerTopContainer">
 				<div class = "logo">
 					<a href = "/main" class = "logo">
@@ -39,6 +39,7 @@
 				</div>
 				<div class = "headerMenu">
 					<div id = "welcome" class = "welcome" style = "display:none">
+						<a href = "#"><img src = "${context}image/notification1.png"></a>
 						${sessionScope.id}님 환영합니다.
 					</div>
 					<ul id = "defaultMenu">
@@ -49,19 +50,18 @@
 					<ul id = "loginMenu" style = "display:none">
 						<li><a href = "/main">메인</a></li>
 						<li id = "userMenu"><a href = "/main">마이페이지</a></li>
-						<li id = "adminMenu"><a href = "/main">관리자페이지</a></li>
-						<li><a href = "/main">알림</a></li>
+						<li id = "adminMenu"><a href = "${context }admin/userManage">관리자페이지</a></li>
 						<li><a href = "/logout">로그아웃</a></li>
 					</ul>
 				</div>
 			</div>
-			<div class = "headerNav">
-				<ul>
-					<li><a href = "#">공지사항</a></li>
-					<li><a href = "#">커뮤니티</a></li>
-					<li><a href = "#">관리비</a></li>
-				</ul>
-			</div>
+		</div>
+		<div class = "headerNav">
+			<ul>
+				<li><a href = "#">공지사항</a></li>
+				<li><a href = "#">커뮤니티</a></li>
+				<li><a href = "#">관리비</a></li>
+			</ul>
 		</div>
     </div>
 </body>

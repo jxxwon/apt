@@ -18,33 +18,31 @@
 </head>
 <body>
 <c:import url = "${context}header"/>
-<div id = "wrap">
-	<div class = "homeContainer">
-		<div class = "loginContainer">
-			<form action = "loginProc" class = "loginForm" id = "f" method="post">
-				<table>
-					<tr>
-						<th>아이디</th>
-						<td><input type = "text" id = "id" name = "id" placeholder = "동-호수"></td>
-					</tr>
-					<tr>
-						<th>비밀번호</th>
-						<td><input type = "password" id = "pw" name = "pw"></td>
-					</tr>
-					<tr>
-						<td colspan=2>
-							<input type = "button" value = "로그인" class = "loginBtn" onclick="loginChk()">
-							<input type = "button" value = "회원가입" class = "regBtn">
-						</td>
-					</tr>
-					<tr>
-						<td colspan=2>
-							<input type = "button" value = "비밀번호 찾기" class = "findPwBtn">
-						</td>
-					</tr>
-				</table>
-			</form>
-		</div>
+<div class = "homeContainer">
+	<div class = "loginContainer">
+		<form action = "loginProc" class = "loginForm" id = "f" method="post">
+			<table>
+				<tr>
+					<th>아이디</th>
+					<td><input type = "text" id = "id" name = "id" placeholder = "동-호수"></td>
+				</tr>
+				<tr>
+					<th>비밀번호</th>
+					<td><input type = "password" id = "pw" name = "pw"></td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<input type = "button" value = "로그인" class = "loginBtn" id = "loginBtn">
+						<input type = "button" value = "회원가입" class = "regBtn" onclick = "location.href='${context}member/register'">
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2>
+						<input type = "button" value = "비밀번호 찾기" class = "findPwBtn">
+					</td>
+				</tr>
+			</table>
+		</form>
 	</div>
 </div>
 <c:import url = "${context}footer"/>

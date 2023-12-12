@@ -8,7 +8,9 @@
 <body>
 	<div class = "homeContainer">
 		<div class = "footerContainer">
-			footer
+			<div>
+				footer
+			</div>
 		</div>
 	</div>
 </body>

@@ -9,5 +9,14 @@
 		SELECT * FROM apt_member WHERE id = #{id}
 	</select>
 
+	<select id = "idChk" resultMap = "memberDto">
+		SELECT * FROM apt_member WHERE id = #{id}
+	</select>
+	
+	<insert id = "register" parameterType = "com.care.apt.member.MemberDTO">
+		INSERT INTO apt_member(id, pw, name, email, phone, status) 
+		VALUES (#{id}, #{pw}, #{name}, #{email}, #{phone}, #{status})
+	</insert>
+
 
 </mapper>

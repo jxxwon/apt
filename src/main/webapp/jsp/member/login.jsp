@@ -7,17 +7,19 @@
 <head>
 <meta charset="UTF-8">
 <title>트리더힐 - 로그인</title>
+<c:import url = "${context}header"/>
 <link href="${context}css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${context}css/member.css" rel="stylesheet" type="text/css"/>
 <script>
 	var message = "${msg}";
 	
-	if(message !== "")
+	if(message !== ""){
+		console.log(message);
 		alert(message);
+	}
 </script>
 </head>
 <body>
-<c:import url = "${context}header"/>
 <div class = "homeContainer">
 	<div class = "loginContainer">
 		<form action = "loginProc" class = "loginForm" id = "f" method="post">

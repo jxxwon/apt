@@ -24,8 +24,18 @@ public class MemberService {
 		if(!bpe.matches(pw, member.getPw())) {
 			return "비밀번호를 확인하세요.";
 		}
+
+		String status = member.getStatus();
+		if(status.equals("A")) {
+			return "승인대기중입니다.";
+		}
+		
+		if(status.equals("R")) {
+			return "가입이 반려되었습니다. 관리자에게 문의하세요.";
+		}
+		
 		session.setAttribute("id", id);
-		session.setAttribute("status", member.getStatus());
+		session.setAttribute("status", status);
 		return "로그인 성공";
 	}
 

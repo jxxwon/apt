@@ -7,12 +7,12 @@
 <head></head>
 <meta charset="UTF-8">
 <title>트리더힐 - 회원가입</title>
+<c:import url = "${context}header"/>
 <link href="${context}css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${context}css/member.css" rel="stylesheet" type="text/css"/>
 <script src="${context}javaScript/member.js"></script>
 </head>
 <body>
-	<c:import url = "${context}header"/>
 	<div class = "memberContainer">
 		<form class = "regForm" id = "f" action = "regProc" method = "post">
 			<table>

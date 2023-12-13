@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class MemberController {
 	@Autowired private MemberService service;
+	@Autowired HttpSession session;
 	
 	@RequestMapping("member/login")
 	public String login() {
@@ -27,7 +30,7 @@ public class MemberController {
 			return "member/login";
 		}
 		String result = service.loginProc(id, pw);
-		if(result.equals("로그인 성공") == false) {
+		if(!result.equals("로그인 성공")) {
 			ra.addFlashAttribute("msg", result);
 			return "redirect:/member/login";
 		}

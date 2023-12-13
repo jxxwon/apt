@@ -157,3 +157,29 @@
 	font-size:17px;
 	font-weight:bold;
 }
+
+.userTable{
+	width:900px;
+	text-align:center;
+	margin:0 auto;
+	padding-left:280px;
+}
+
+.userTable tr{
+	height:40px; 
+}
+
+.userTable table tr th{
+	width:150px;
+	font-weight:bold;
+}
+
+.userTable table tr td{
+	text-align:left;
+	font-weight:400;
+}
+
+.userTable .btnDiv{
+	width:100%;
+	margin-top:50px;
+}

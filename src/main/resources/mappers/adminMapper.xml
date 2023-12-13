@@ -3,13 +3,32 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="com.care.apt.admin.AdminMapper">
-  	<select id="totalCount">
-  		SELECT count(id) FROM apt_member
-  	</select>
 	<select id="selectUserAll" resultType="com.care.apt.member.MemberDTO">
 		SELECT * FROM (SELECT rownum as rn, AAA.* 
 		FROM (SELECT * FROM apt_member ORDER BY id ASC)AAA)BBB 
 		WHERE rn BETWEEN #{begin} AND #{end}
 		ORDER BY status DESC
 	</select>
+
+  	<select id="totalCount">
+  		SELECT count(id) FROM apt_member
+  	</select>
+
+	<select id="selectUserStatus">
+	 	SELECT BBB.* FROM(SELECT ROWNUM as rn, AAA.* 
+	 	FROM (SELECT * FROM apt_member WHERE status = #{status})AAA)BBB 
+	 	WHERE rn BETWEEN #{begin} AND #{end} ORDER BY id ASC
+	</select>
+
+	<select id="statusCount">
+		SELECT count(id) FROM apt_member WHERE status = #{status}
+	</select>
+	
+	<select id="selectUser">
+		SELECT * FROM apt_member WHERE id = #{id}
+	</select>
+	
+	<update id="userAuth">
+		UPDATE apt_member SET status = #{status} WHERE id = #{id}
+	</update>
   </mapper>

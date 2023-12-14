@@ -32,6 +32,7 @@
 								<option <c:if test = "${param.status == 'D'}">selected = 'selected'</c:if>value = "D">승인대기</option>
 								<option <c:if test = "${param.status == 'A'}">selected = 'selected'</c:if>value = "A">승인</option>
 								<option <c:if test = "${param.status == 'R'}">selected = 'selected'</c:if>value = "R">반려</option>
+								<option <c:if test = "${param.status == '0'}">selected = 'selected'</c:if>value = "0">탈퇴</option>
 							</select>
 							<input type = "text" id = "search" name = "search" placeholder = "동-호수 ex) 000-000" style = "display:none;">
 							<input type = "submit" id = "searchBtn" value = "검색">
@@ -54,7 +55,7 @@
 											<td>${user.id}</td>
 											<td>${user.name}</td>
 											<td>
-												<c:if test = "${user.status == '0'}">관리자</c:if>
+												<c:if test = "${user.status == '1'}">관리자</c:if>
 												<c:if test = "${user.status == 'D'}">
 													<span style = "color:red;">승인대기</span>
 												</c:if>
@@ -62,6 +63,7 @@
 												<c:if test = "${user.status == 'R'}">
 													<span style = "color:blue;">반려</span>
 												</c:if>
+												<c:if test = "${user.status == '0'}">탈퇴</c:if>
 											</td>
 										</tr>
 									</c:forEach>

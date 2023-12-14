@@ -20,4 +20,6 @@ public interface AdminMapper {
 	MemberDTO selectUser(String id);
 
 	int userAuth(String id, String status);
+
+	int userDelete(String id, String withdrawId, String status);
 }

@@ -31,4 +31,8 @@
 	<update id="userAuth">
 		UPDATE apt_member SET status = #{status} WHERE id = #{id}
 	</update>
+	
+	<update id="userDelete">
+		UPDATE apt_member SET id = #{withdrawId}, pw = '', email = '', status = #{status} WHERE id = #{id}
+	</update>
   </mapper>

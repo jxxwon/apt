@@ -26,12 +26,12 @@ public class MemberService {
 		}
 
 		String status = member.getStatus();
-		if(status.equals("A")) {
+		if(status.equals("D")) {
 			return "승인대기중입니다.";
 		}
 		
 		if(status.equals("R")) {
-			return "가입이 반려되었습니다. 관리자에게 문의하세요.";
+			return "반려되었습니다. 관리자에게 문의하세요.";
 		}
 		
 		session.setAttribute("id", id);

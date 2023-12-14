@@ -1,6 +1,7 @@
 package com.care.apt.admin;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -57,6 +58,12 @@ public class AdminService {
 
 	public int userAuth(String id, String action) {
 		String status = "A";
+		if(action.equals("userDelete")) {
+			status = "0";
+			Random r = new Random();
+			String withdrawId = String.format("%06d", r.nextInt(1000000));
+			return mapper.userDelete(id, withdrawId, status);
+		}
 		if(action.equals("userReject")) {
 			status = "R";
 		}

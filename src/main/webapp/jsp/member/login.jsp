@@ -14,7 +14,6 @@
 	var message = "${msg}";
 	
 	if(message !== ""){
-		console.log(message);
 		alert(message);
 	}
 </script>

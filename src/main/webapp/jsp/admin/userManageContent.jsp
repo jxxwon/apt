@@ -44,8 +44,15 @@
 				</table>
 				<input type="hidden" name="id" value="${user.id}">
 				<div class = "btnDiv">
-					<input type = "button" value = "승인" id="userAuthBtn">
-					<input type = "button" value = "반려" id="userRejectBtn">
+					<c:choose>
+						<c:when test = "${user.status == 'D' || user.status == 'R'}">
+							<input type = "button" value = "승인" id="userAuthBtn">
+							<input type = "button" value = "반려" id="userRejectBtn">
+						</c:when>
+						<c:otherwise>
+							<input type = "button" value = "탈퇴" id="userDeleteBtn">
+						</c:otherwise>
+					</c:choose>
 					<input type = "button" value = "목록" id="userListBtn">
 				</div>
 			</form>

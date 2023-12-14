@@ -14,6 +14,19 @@ public class AdminController {
 	@Autowired HttpSession session;
 	@Autowired AdminService service;
 	
+	public String adminChk() {
+		String loginId = (String)session.getAttribute("id");
+		if(loginId == null || loginId == "") {
+			return "redirect:/member/login";
+		}
+		
+		String currentStatus = (String)session.getAttribute("status");
+		if(!currentStatus.equals("1")) {
+			return "redirect:/main";
+		}
+		return "관리자입니다.";
+	}
+	
 	@RequestMapping("admin/subMenuAdmin")
 	public String subMenuAdmin() {
 		return "admin/subMenuAdmin";
@@ -25,34 +38,39 @@ public class AdminController {
 			@RequestParam(required=false, value = "status")String status,
 			@RequestParam(required=false, value = "search")String search,
 			Model model) {
-		
-		String id = (String)session.getAttribute("id");
-		if(id == null || id == "") {
-			return "redirect:/member/login";
+
+		String result = this.adminChk();
+		if(result.equals("관리자입니다.")){
+			service.userList(cp, select, status, search, model);
+			return "admin/userManage";
+		} else {
+			return result;
 		}
-		
-		String currentStatus = (String)session.getAttribute("status");
-		if(!currentStatus.equals("0")) {
-			return "redirect:/main";
-		}
-		service.userList(cp, select, status, search, model);
-		
-		return "admin/userManage";
 	}
 	
 	@RequestMapping("admin/userManageContent")
 	public String userManageContent(@RequestParam(required=false, value="id")String id, Model model) {
-		service.selectUser(id, model);
-		return "admin/userManageContent";
+		String result = this.adminChk();
+		if(result.equals("관리자입니다.")){
+			service.selectUser(id, model);
+			return "admin/userManageContent";
+		} else {
+			return result;
+		}
 	}
 	
 	@PostMapping("admin/userAuth")
 	public String userAuth(String id, String action) {
-		int result = service.userAuth(id, action);
-		if(result == 1) {
-			return "redirect:/admin/userManage";
+		String result = this.adminChk();
+		if(result.equals("관리자입니다.")){
+			int auth = service.userAuth(id, action);
+			if(auth == 1) {
+				return "redirect:/admin/userManage";
+			} else {
+				return "admin/userManageContent";
+			}
 		} else {
-			return "admin/userManageContent";
+			return result;
 		}
 	}
 }

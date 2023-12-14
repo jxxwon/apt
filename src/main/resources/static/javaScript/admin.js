@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function(){
 document.addEventListener('DOMContentLoaded', function(){
     let userAuthBtn = document.getElementById('userAuthBtn');
     let userRejectBtn = document.getElementById('userRejectBtn');
+	let userDeleteBtn = document.getElementById('userDeleteBtn');
 
     function submitForm(action) {
         let f = document.getElementById('f');
@@ -88,4 +89,15 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
         });
     }
+	if(userDeleteBtn){
+		userDeleteBtn.addEventListener('click', function(){
+			if(confirm('해당 회원을 탈퇴시키겠습니까?')){
+				submitForm('userDelete');
+				alert('탈퇴되었습니다.')
+			}else{
+				alert('탈퇴를 취소하였습니다.');
+			}
+		})
+	}
+    
 });

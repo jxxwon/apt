@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.apt.user.UserMapper">
+	<select id = "confirm" resultType="com.care.apt.member.MemberDTO">
+		SELECT * FROM apt_member WHERE id = #{id}
+	</select>
+	
+	<update id = "updateInfo">
+		UPDATE apt_member SET phone = #{phone}, email = #{email} WHERE id = #{id}
+	</update>
+	
+	<update id = "updateInfoPw">
+		UPDATE apt_member SET pw = #{cryptPassword}, phone = #{phone}, email = #{email} WHERE id = #{id}
+	</update>
+</mapper>

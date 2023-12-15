@@ -49,8 +49,8 @@
 					</ul>
 					<ul id = "loginMenu" style = "display:none">
 						<li><a href = "/main">메인</a></li>
-						<li id = "userMenu"><a href = "/main">마이페이지</a></li>
-						<li id = "adminMenu"><a href = "${context }admin/userManage">관리자페이지</a></li>
+						<li id = "userMenu"><a href = "${context}user/myPage">마이페이지</a></li>
+						<li id = "adminMenu"><a href = "${context}admin/userManage">관리자페이지</a></li>
 						<li><a href = "/logout">로그아웃</a></li>
 					</ul>
 				</div>

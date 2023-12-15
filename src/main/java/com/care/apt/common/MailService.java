@@ -1,4 +1,4 @@
-package com.care.apt.member;
+package com.care.apt.common;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSendException;

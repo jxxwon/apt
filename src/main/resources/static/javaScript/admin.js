@@ -101,3 +101,89 @@ document.addEventListener('DOMContentLoaded', function(){
 	}
     
 });
+
+/*관리비 - 세대별 관리비 등록*/
+document.addEventListener('DOMContentLoaded',function(){
+	let costRegBtn = document.getElementById('costRegBtn');
+	if(costRegBtn){
+		costRegBtn.addEventListener('click',function(){
+			location.href = "/admin/costRegister";
+		})
+	}
+});
+
+/*관리비 관리 - 검색조건 변경*/
+document.addEventListener('DOMContentLoaded', function () {
+    let complex = document.getElementById('complex');
+    let unit = document.getElementById('unit');
+
+    if (complex && unit) {
+        complex.addEventListener('change', function () {
+            const complexOptions = {
+                "101": ["101", "102", "201", "202", "301", "302", "401", "402", "501", "502"],
+                "102": ["101", "102", "103", "201", "202", "203", "301", "302", "303", "401", "402", "403", "501", "502", "503", "601", "602", "603", "701", "702", "703"],
+                "103": ["101", "102", "103", "104", "301", "302"],
+                "104": ["101", "102", "103", "104", "301", "302"],
+            }
+
+            // 초기화
+            unit.innerHTML = '<option value="all">호수 선택</option>';
+
+            if (complexOptions.hasOwnProperty(complex.value)) {
+                complexOptions[complex.value].forEach(optionValue => {
+                    // '호'를 붙여서 옵션 추가
+                    let displayText = optionValue + '호';
+                    let option = new Option(displayText, optionValue);
+                    
+                    // Set the 'selected' attribute if the optionValue matches the unit variable
+                    if (optionValue === "${unit}") {
+                        option.selected = true;
+                    }
+
+                    unit.options.add(option);
+                });
+            }
+        });
+    }
+});
+
+/*관리비 등록 - 검색버튼*/
+document.addEventListener('DOMContentLoaded', function(){
+	let costRegSearchBtn = document.getElementById('costRegSearchBtn');
+	if(costRegSearchBtn){
+		costRegSearchBtn.addEventListener('click', function(){
+			let year = document.getElementById('year').value;
+			let month = document.getElementById('month').value;
+			let complex = document.getElementById('complex').value;
+			let unit = document.getElementById('unit').value;
+			
+			if(year === 'all'){
+				alert('연도를 선택하세요.');
+				return;
+			}
+			if(month === 'all'){
+				alert('월을 선택하세요.');
+				return;
+			}
+			if(complex === 'all'){
+				alert('동을 선택하세요.');
+				return;
+			}
+			if(unit === 'all'){
+				alert('호수를 선택하세요.');
+				return;
+			}
+			let costRegSearchForm = document.getElementById('costRegSearchForm');
+			costRegSearchForm.submit();
+		})
+	}
+})
+/*관리비 등록 - 목록버튼*/
+document.addEventListener('DOMContentLoaded', function(){
+	let costListBtn = document.getElementById('costListBtn');
+	if(costListBtn){
+		costListBtn.addEventListener('click', function(){
+			location.href='/admin/costManage';
+		})
+	}
+})

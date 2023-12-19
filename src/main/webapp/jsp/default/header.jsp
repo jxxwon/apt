@@ -58,7 +58,7 @@
 		</div>
 		<div class = "headerNav">
 			<ul>
-				<li><a href = "#">공지사항</a></li>
+				<li><a href = "${context}info/notice">공지사항</a></li>
 				<li><a href = "#">커뮤니티</a></li>
 				<li><a href = "#">관리비</a></li>
 			</ul>

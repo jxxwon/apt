@@ -27,8 +27,9 @@
 			<div class = "costManage">
 				<p>관리비관리</p>
 				<ul>
-					<li><a href = "#">관리비 조회</a></li>
-					<li><a href = "#">세대별 관리비 등록</a></li>
+					<li><a href = "${context}admin/costManage">관리비 등록 및 조회</a></li>
+					<li><a href = "#">미납금 관리</a></li>
+					<li><a href = "#">결제관리</a></li>
 				</ul>
 			</div>
 		</div>

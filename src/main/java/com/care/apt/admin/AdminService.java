@@ -1,6 +1,8 @@
 package com.care.apt.admin;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +70,25 @@ public class AdminService {
 			status = "R";
 		}
 		return mapper.userAuth(id, status);
+	}
+
+	public void condition(Model model) {
+		Date date = new Date();
+		SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
+		String year = yearFormat.format(date);
+		model.addAttribute("year", year);
+		
+		SimpleDateFormat monthFormat = new SimpleDateFormat("MM");
+		String month = monthFormat.format(date);
+		model.addAttribute("month", month);
+	}
+
+	public void costRegSearch(String year, String month, String complex, String unit, Model model) {
+		model.addAttribute("year", year);
+		model.addAttribute("month", month);
+		model.addAttribute("complex", complex);
+		model.addAttribute("unit", unit);
+		System.out.println(unit);
 	}
 
 }

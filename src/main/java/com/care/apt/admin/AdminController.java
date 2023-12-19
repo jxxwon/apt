@@ -73,4 +73,32 @@ public class AdminController {
 			return result;
 		}
 	}
+	
+	@RequestMapping("admin/costManage")
+	public String costManage(Model model) {
+		String result = this.adminChk();
+		if(result.equals("관리자입니다.")){
+			service.condition(model);
+			return "admin/costManage";
+		} else {
+			return result;
+		}
+	}
+	
+	@RequestMapping("admin/costRegister")
+	public String costRegister(@RequestParam(required=false, value = "year") String year,
+			@RequestParam(required=false, value = "month") String month,
+			@RequestParam(required=false, value = "complex") String complex,
+			@RequestParam(required=false, value = "unit") String unit, Model model) {
+		String result = this.adminChk();
+		if(result.equals("관리자입니다.")){
+			service.condition(model);
+			if(complex != null) {
+				service.costRegSearch(year, month, complex, unit, model);
+			}
+			return "admin/costRegister";
+		} else {
+			return result;
+		}
+	}
 }

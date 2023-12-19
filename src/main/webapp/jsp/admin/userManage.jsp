@@ -20,21 +20,21 @@
 		<div class = "innerContainer">
 			<p>회원 조회</p>
 			<div class = "manageContainer">
-				<div class = "userList">
+				<div class = "list">
 					<form action="">
 						<div class = "condition">
 							<select id = "select" name = "select">
 								<option value = "status">승인상태</option>
 								<option <c:if test = "${param.select == 'id'}">selected = 'selected'</c:if>value = "id">아이디</option>
 							</select>
-							<select id = "status" name = "status">
+							<select id = "status" name = "status" class = "status">
 								<option <c:if test = "${param.status == 'all'}">selected = 'selected'</c:if>value = "all">전체</option>
 								<option <c:if test = "${param.status == 'D'}">selected = 'selected'</c:if>value = "D">승인대기</option>
 								<option <c:if test = "${param.status == 'A'}">selected = 'selected'</c:if>value = "A">승인</option>
 								<option <c:if test = "${param.status == 'R'}">selected = 'selected'</c:if>value = "R">반려</option>
 								<option <c:if test = "${param.status == '0'}">selected = 'selected'</c:if>value = "0">탈퇴</option>
 							</select>
-							<input type = "text" id = "search" name = "search" placeholder = "동-호수 ex) 000-000" style = "display:none;">
+							<input type = "text" id = "search" name = "search" class = "search" placeholder = "동-호수 ex) 000-000" style = "display:none;">
 							<input type = "submit" id = "searchBtn" value = "검색">
 						</div>
 						<table>

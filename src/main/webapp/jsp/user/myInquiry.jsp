@@ -32,7 +32,7 @@
 										<tr>
 											<td style = "width:30px; text-align:center;">${inquiry.rn}</td>
 											<td style = "width:400px;">
-												<a href = "#">
+												<a href = "${context}user/myInquiryContent?rn=${inquiry.rn}">
 													${inquiry.title}
 												</a>
 											</td>

@@ -30,4 +30,12 @@
 	<insert id = "inquiryWrite">
 		INSERT INTO apt_inquiry(no, title, content, reply_content, reply, writer, write_time) VALUES(#{no}, #{title}, #{content}, #{replyContent}, #{reply}, #{writer}, #{writeTime})
 	</insert>
+	
+	<select id = "myInquiryContent" resultMap="inquiryDto">
+		SELECT CCC.* 
+		FROM(SELECT BBB.* 
+		FROM(SELECT rownum as rn, AAA.* 
+		FROM(SELECT * FROM apt_inquiry WHERE writer = #{id} ORDER BY no ASC)AAA)BBB ORDER BY rn DESC)CCC
+		WHERE rn = #{rn}
+	</select>
 </mapper>

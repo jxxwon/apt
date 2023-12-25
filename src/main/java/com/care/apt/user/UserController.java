@@ -1,5 +1,6 @@
 package com.care.apt.user;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -127,5 +128,17 @@ public class UserController {
 		String id = (String)session.getAttribute("id");
 		service.inquiryWriteProc(id, title, content);
 		return "redirect:/user/myInquiry";
+	}
+	
+	@RequestMapping("user/myInquiryContent")
+	public String myInquiryContent(String rn, Model model) {
+		String result = this.loginChk();
+		if(!result.equals("로그인")){
+			return "redirect:/member/login";
+		}
+		
+		String id = (String)session.getAttribute("id");
+		service.myInquiryContent(id, rn, model);
+		return "user/myInquiryContent";
 	}
 }

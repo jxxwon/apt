@@ -24,17 +24,29 @@
 					<form action = "inquiryWriteProc" id = "f" method = "post">
 						<table class = "inquiry">
 							<tr>
-								<th>글제목</th>
-								<td><input type = "text" id = "title" name = "title" placeholder = "100자 이내로 입력하세요."></td>
+								<th colspan="4" align="left" style="padding-bottom:20px;">${title}</th>
+							</tr>
+							<tr style = "border-bottom:1px solid #ddd">
+								<th width="40px" style="padding-bottom:40px;">작성일</th>
+								<td width="100px" style="padding-bottom:40px;">${writeTime}</td>
+								<th width="80px" style="padding-bottom:40px;">답변여부</th>
+								<c:if test = "${reply == 'N'}">
+									<td align="left" style="padding-bottom:40px;">답변대기</td>
+								</c:if>
+								<c:if test = "${reply == 'Y'}">
+									<td align="left" style="padding-bottom:40px;">답변완료</td>
+								</c:if>
 							</tr>
 							<tr>
-								<th>글내용</th>
-								<td><textarea id = "content" name = "content" style = "height:400px; resize:none;" placeholder = "1000자 이내로 입력하세요."></textarea></td>
+								<td colspan="4" align="left" style = "padding-top:40px;">${content}</td>
 							</tr>
 						</table>
 						<div class = "btn">
-							<input type = "button" value = "등록" id = "inquiryWriteProcBtn">
-							<input type = "button" value = "취소" id = "myInquiryBtn">
+							<c:if test = "${reply == 'N'}">
+								<input type = "button" value = "수정">
+								<input type = "button" value = "삭제">
+							</c:if>
+							<input type = "button" value = "목록" id = "myInquiryBtn">
 						</div>
 					</form>
 				</div>

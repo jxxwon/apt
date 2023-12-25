@@ -22,4 +22,6 @@ public interface UserMapper {
 	void inquiryWrite(int no, String title, String content, String replyContent, String reply, String writer,
 			String writeTime);
 
+	InquiryDTO myInquiryContent(String id, String rn);
+
 }

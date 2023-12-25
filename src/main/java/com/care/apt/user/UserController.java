@@ -89,4 +89,43 @@ public class UserController {
 		service.updateInfo(id, newPw, phone, email);
 		return "redirect:/user/myInfo";
 	}
+	
+	@RequestMapping("user/myInquiry")
+	public String myInquiry(Model model) {
+		String result = this.loginChk();
+		if(!result.equals("로그인")){
+			return "redirect:/member/login";
+		}
+		String id = (String)session.getAttribute("id");
+		service.myInquiryList(id, model);
+		return "user/myInquiry";
+	}
+	
+	@RequestMapping("user/myInquiryWrite")
+	public String myInquiryWrite() {
+		String result = this.loginChk();
+		if(!result.equals("로그인")){
+			return "redirect:/member/login";
+		}
+		String id = (String)session.getAttribute("id");
+		return "user/myInquiryWrite";
+	}
+	
+	@PostMapping("user/inquiryWriteProc")
+	public String inquiryWriteProc(String title, String content) {
+		String result = this.loginChk();
+		if(!result.equals("로그인")){
+			return "redirect:/member/login";
+		}
+		if(title == null || title == "") {
+			return "user/myInquiryWrite";
+		}
+		if(content == null || content == "") {
+			return "user/myInquiryWrite";
+		}
+		
+		String id = (String)session.getAttribute("id");
+		service.inquiryWriteProc(id, title, content);
+		return "redirect:/user/myInquiry";
+	}
 }

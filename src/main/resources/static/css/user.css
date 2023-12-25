@@ -97,3 +97,54 @@
 	text-align:center;
 	margin-top:50px;
 }
+
+/*1:1문의*/
+.myInquiryContainer{
+	text-align:center;
+	width:100%;
+}
+
+.list{
+	margin-top:40px;
+	text-align:center;
+	width:100%;
+}
+
+.list table{
+	width:100%;
+	text-align:center;
+}
+
+.list table tr{
+	height:40px;
+}
+
+.list table tr:hover {
+	cursor:pointer;
+	background-color: #eee;
+}
+
+.list table tr td{
+	text-align:center;
+	font-size:15px;
+	font-weight:400;
+	color:#666;
+	border-bottom:1px solid #ddd;
+}
+
+.list table tr td a:hover{
+	font-weight:700;
+}
+
+.btn{
+	text-align:right;
+	margin-top:40px;
+	margin-bottom:80px;
+}
+
+.inquiry{
+	width:100%;
+}
+
+.inquiry tr th,
+.inquiry tr td{padding:5px 0};

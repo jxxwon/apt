@@ -1,5 +1,8 @@
 package com.care.apt.user;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,5 +71,30 @@ public class UserService {
 			String cryptPassword = bpe.encode(newPw);
 			mapper.updateInfoPw(id, cryptPassword, phone, email);
 		}
+	}
+
+	public void myInquiryList(String id, Model model) {
+		ArrayList<InquiryDTO> inquiryList = mapper.myInquiryList(id);
+		model.addAttribute("myInquiry", inquiryList);
+	}
+
+	public void inquiryWriteProc(String id, String title, String content) { 
+		int no = mapper.countInquiry();
+		if(no == 0) {
+			no = 1;
+		} else {
+			no++;
+		}
+		
+		String writer = id;
+		
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		String writeTime = sdf.format(date);
+		
+		String replyContent = "";
+		String reply = "N";
+		
+		mapper.inquiryWrite(no, title, content, replyContent, reply, writer, writeTime);
 	}
 }

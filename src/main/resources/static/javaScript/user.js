@@ -139,3 +139,49 @@ document.addEventListener('DOMContentLoaded', function(){
 		})
 	}
 })
+
+/*1:1문의 등록*/
+document.addEventListener('DOMContentLoaded', function(){
+	let inquiryWriteBtn = document.getElementById('inquiryWriteBtn');
+	if(inquiryWriteBtn){
+		inquiryWriteBtn.addEventListener('click', function(){
+			location.href = "/user/myInquiryWrite";
+		})
+	}
+})
+
+document.addEventListener('DOMContentLoaded', function(){
+	let inquiryWriteProcBtn = document.getElementById('inquiryWriteProcBtn');
+	if(inquiryWriteProcBtn){
+		inquiryWriteProcBtn.addEventListener('click', function(){
+			let title = document.getElementById('title').value;
+			let content = document.getElementById('content').value;
+			
+			if(title === "" || title.trim().length === 0){
+				alert('글제목을 입력하세요.');
+				return;
+			}
+			
+			if(content === "" || content.trim().length === 0){
+				alert('내용을 입력하세요.');
+				return;
+			}
+			if(confirm('1:1문의를 등록하시겠습니까?')){
+				let f = document.getElementById('f');
+				f.submit();
+				alert('문의가 등록되었습니다. 답변을 기다려주세요.');
+			} else {
+				alert('등록이 취소되었습니다.');
+			}
+		})
+	}
+})
+
+document.addEventListener('DOMContentLoaded', function(){
+	let myInquiryBtn = document.getElementById('myInquiryBtn');
+	if(myInquiryBtn){
+		myInquiryBtn.addEventListener('click', function(){
+			location.href = '/user/myInquiry';
+		})
+	}
+})

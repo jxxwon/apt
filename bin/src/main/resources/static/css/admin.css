@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+.adminContainer{
+	width:1200px;
+	min-height:600px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.subContainer{
+	float:left;
+	width:200px;
+}
+
+/*inner*/
+.innerContainer{
+	padding-top:40px;
+	margin-left:240px;
+	width:100%;
+}
+
+.innerContainer > p {
+	height:40px;
+	font-size:20px;
+	font-weight:700;
+	border-bottom:2px solid #333;
+}
+
+/*manageConatiner*/
+.manageContainer{
+	width:900px;
+	padding-top:40px;
+}
+
+.condition{
+	width:100%;
+	text-align:center;
+	margin:40px 0;
+	display:table;
+}
+
+.condition label {
+	font-size:15px;
+	font-weight:400;
+	height:30px;
+	line-height:30px;
+}
+
+.condition select{
+	width:100px;
+	height:30px;
+	text-align:center;
+	appearance: auto;
+	-webkit-appearance: auto;
+}
+
+.condition .status{
+	margin:0 10px;
+}
+
+.condition .search{
+	margin:0 10px;
+}
+
+.condition > input[type="text"]{
+	width:200px;
+	height:30px;
+}
+
+.list{
+	margin-top:40px;
+	text-align:center;
+	width:100%;
+}
+
+.list table{
+	width:100%;
+	text-align:center;
+}
+
+.list table tr{
+	height:40px;
+}
+
+.list table tr:hover {
+	cursor:pointer;
+	background-color: #eee;
+}
+
+.list tr:first-child:hover,
+.list tr:last-child:hover{
+	cursor:default;
+	background-color: #fff;
+}
+
+.list table tr td{
+	font-size:15px;
+	font-weight:400;
+	color:#666;
+	border-bottom:1px solid #ddd;
+}
+
+.list table tr:last-child td{
+	border-bottom:0;
+	padding-top:40px;
+}
+
+.list table tr:last-child td a{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ddd;
+	margin-right:5px;
+}
+
+.list table tr:last-child td a:last-child{
+	margin-right:0;
+}
+
+.list table tr:first-child th{
+	font-size:17px;
+	font-weight:bold;
+}
+
+.btn{
+	text-align:right;
+	margin-top:40px;
+	margin-bottom:80px;
+}
+.userTable{
+	width:900px;
+	text-align:center;
+	margin:0 auto;
+	padding-left:280px;
+}
+
+.userTable tr{
+	height:40px; 
+}
+
+.userTable table tr th{
+	width:150px;
+	font-weight:bold;
+}
+
+.userTable table tr td{
+	text-align:left;
+	font-weight:400;
+}
+
+.userTable .btnDiv{
+	width:100%;
+	margin-top:50px;
+}
+
+/*costManage*/
+.conditionLeft,
+.conditionBtn{
+	display:table-cell;
+}
+
+.conditionLeft{
+	width:550px;
+	text-align:right;
+}
+
+.conditionLeft select{
+	margin-bottom:5px;
+}
+
+.conditionBtn{
+	vertical-align: middle;
+	text-align:left;
+	padding-left:10px;
+}
+
+.costRegContainer{
+	width:100%;
+	margin-top:40px;
+	text-align:center;
+}
+
+.costRegContainer table{
+	width:100%;
+	text-align:center;
+}
+
+.costRegContainer table tr{
+	height:60px;
+}
+.costRegContainer table tr td input[type="text"]{
+	width:200px;
+	height:35px;
+	margin-right:5px;
+	text-align:right;
+}
+
+.costRegContainer table tr:last-child td{
+	padding-top:40px;
+	font-weight:700;
+}
+
+.costRegContainer table tr:last-child td input[type="text"]{
+	width:300px;
+}

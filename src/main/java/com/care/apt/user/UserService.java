@@ -101,9 +101,15 @@ public class UserService {
 	public void myInquiryContent(String id, String rn, Model model) {
 		InquiryDTO myInquiry = mapper.myInquiryContent(id, rn);
 
+		model.addAttribute("rn", rn);
 		model.addAttribute("title", myInquiry.getTitle());
 		model.addAttribute("writeTime", myInquiry.getWriteTime());
 		model.addAttribute("reply", myInquiry.getReply());
 		model.addAttribute("content", myInquiry.getContent());
+	}
+
+	public void updateInquiry(String id, String rn, String title, String content) {
+		int no = mapper.findInquiryNo(id, rn);
+		mapper.updateInquiry(no, title, content);
 	}
 }

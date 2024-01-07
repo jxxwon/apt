@@ -1,0 +1,150 @@
+@charset "UTF-8";
+.userContainer{
+	width:1200px;
+	min-height:600px;
+	margin:0 auto;
+	overflow:hidden;
+}
+
+.subContainer{
+	float:left;
+	width:200px;
+}
+
+/*inner*/
+.innerContainer{
+	padding-top:40px;
+	margin-left:240px;
+	width:100%;
+}
+
+.innerContainer > p {
+	height:40px;
+	font-size:20px;
+	font-weight:700;
+	border-bottom:2px solid #333;
+}
+
+/*myPageConatiner*/
+.myPageContainer{
+	width:900px;
+	padding-top:40px;
+}
+
+.myPageContainer input[type="password"]{
+	width:200px;
+	height:35px;
+}
+
+.myInfoContainer{
+	text-align:center;
+	width:100%;
+}
+
+.myInfoContainer label{
+	font-weight:bold;
+	margin-right:10px;
+}
+
+.myInfoTable{
+	width:900px;
+	text-align:center;
+	margin:0 auto;
+	padding-left:200px;
+	padding-bottom:100px;
+}
+
+.myInfoTable tr{
+	height:60px;
+}
+
+.myInfoTable table tr th{
+	width:150px;
+	font-weight:bold;
+}
+
+.myInfoTable table tr td{
+	text-align:left;
+	font-weight:400;
+}
+
+.myInfoTable table tr td p{
+	margin-top:5px;
+	font-size:14px;
+}
+
+.myInfoTable input[type="text"],
+.myInfoTable input[type="password"]{
+	width:200px;
+	height:35px;
+}
+
+.btn {
+	margin-top:20px;
+	text-align:center;
+}
+
+.btn input[type="button"]{
+	margin-right:10px;
+}
+
+.btn input[type="button"]:last-child{
+	margin-right:0;
+}
+
+.btnDiv{
+	width:450px;
+	text-align:center;
+	margin-top:50px;
+}
+
+/*1:1문의*/
+.myInquiryContainer{
+	text-align:center;
+	width:100%;
+}
+
+.list{
+	margin-top:40px;
+	text-align:center;
+	width:100%;
+}
+
+.list table{
+	width:100%;
+	text-align:center;
+}
+
+.list table tr{
+	height:40px;
+}
+
+.list table tr:hover {
+	cursor:pointer;
+	background-color: #eee;
+}
+
+.list table tr td{
+	text-align:center;
+	font-size:15px;
+	font-weight:400;
+	color:#666;
+	border-bottom:1px solid #ddd;
+}
+
+.list table tr td a:hover{
+	font-weight:700;
+}
+
+.btn{
+	text-align:right;
+	margin-top:40px;
+	margin-bottom:80px;
+}
+
+.inquiry{
+	width:100%;
+}
+
+.inquiry tr th,
+.inquiry tr td{padding:5px 0};

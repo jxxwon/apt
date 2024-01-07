@@ -38,15 +38,4 @@
 		FROM(SELECT * FROM apt_inquiry WHERE writer = #{id} ORDER BY no ASC)AAA)BBB ORDER BY rn DESC)CCC
 		WHERE rn = #{rn}
 	</select>
-	
-	<select id = "findInquiryNo">
-		SELECT no 
-		FROM(SELECT rownum as rn, AAA.* 
-		FROM(SELECT * 
-		FROM apt_inquiry WHERE writer = #{id} ORDER BY no asc)AAA) WHERE rn = #{rn}
-	</select>
-	
-	<update id = "updateInquiry">
-		UPDATE apt_inquiry set title = #{title}, content = #{content} where no = #{no}
-	</update>
 </mapper>

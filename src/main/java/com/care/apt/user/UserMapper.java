@@ -24,4 +24,8 @@ public interface UserMapper {
 
 	InquiryDTO myInquiryContent(String id, String rn);
 
+	int findInquiryNo(String id, String rn);
+
+	void updateInquiry(int no, String title, String content);
+
 }

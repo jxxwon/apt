@@ -185,26 +185,3 @@ document.addEventListener('DOMContentLoaded', function(){
 		})
 	}
 })
-
-/*1:1문의 수정*/
-document.addEventListener('DOMContentLoaded', function(){
-	let inquiryUpdateProcBtn = document.getElementById('inquiryUpdateProcBtn');
-	if(inquiryUpdateProcBtn){
-		inquiryUpdateProcBtn.addEventListener('click', function(){
-			let title = document.getElementById('title').value;
-			let content = document.getElementById('content').value;
-			
-			if(title == "" || title.trim().length === 0){
-				alert('제목을 입력해주세요.');
-				return;
-			}
-
-			if(content == "" || content.trim().length === 0){
-				alert('내용을 입력해주세요.');
-				return;
-			}
-			let f = document.getElementById('f');
-			f.submit();
-		})
-	}
-})

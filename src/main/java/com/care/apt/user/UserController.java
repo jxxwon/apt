@@ -1,12 +1,12 @@
 package com.care.apt.user;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import jakarta.servlet.http.HttpSession;
@@ -18,7 +18,7 @@ public class UserController {
 	
 	public String loginChk() {
 		String id = (String)session.getAttribute("id");
-		if(id.isEmpty() || id == null) {
+		if(id == null || id.isEmpty()) {
 			return "redirect:/main";
 		}
 		return "로그인";
@@ -140,5 +140,28 @@ public class UserController {
 		String id = (String)session.getAttribute("id");
 		service.myInquiryContent(id, rn, model);
 		return "user/myInquiryContent";
+	}
+	
+	@RequestMapping("user/myInquiryUpdate")
+	public String myInquiryUpdate(String rn, Model model) {
+		String result = this.loginChk();
+		if(!result.equals("로그인")){
+			return "redirect:/member/login";
+		}
+		String id = (String)session.getAttribute("id");
+		service.myInquiryContent(id, rn, model);
+		return "user/myInquiryUpdate";
+	}
+	
+	@PostMapping("user/myInquiryUpdateProc")
+	public String myInquiryUpdateProc(String rn, String title, String content, Model model) {
+		String result = this.loginChk();
+		if(!result.equals("로그인")){
+			return "redirect:/member/login";
+		}
+
+		String id = (String)session.getAttribute("id");
+		service.updateInquiry(id, rn, title, content);
+		return "redirect:myInquiry";
 	}
 }

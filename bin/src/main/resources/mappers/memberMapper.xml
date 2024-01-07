@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.care.apt.member.MemberMapper">
+	<resultMap type = "com.care.apt.member.MemberDTO" id = "memberDto"></resultMap>
+
+	<select id = "login" resultMap = "memberDto">
+		SELECT * FROM apt_member WHERE id = #{id}
+	</select>
+
+	<select id = "idChk" resultMap = "memberDto">
+		SELECT * FROM apt_member WHERE id = #{id}
+	</select>
+	
+	<insert id = "register" parameterType = "com.care.apt.member.MemberDTO">
+		INSERT INTO apt_member(id, pw, name, email, phone, status) 
+		VALUES (#{id}, #{pw}, #{name}, #{email}, #{phone}, #{status})
+	</insert>
+
+
+</mapper>

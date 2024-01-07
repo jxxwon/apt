@@ -112,4 +112,9 @@ public class UserService {
 		int no = mapper.findInquiryNo(id, rn);
 		mapper.updateInquiry(no, title, content);
 	}
+
+	public void myInquiryDel(String id, String rn) {
+		int no = mapper.findInquiryNo(id, rn);
+		mapper.myInquiryDel(no);
+	}
 }

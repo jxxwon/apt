@@ -164,4 +164,17 @@ public class UserController {
 		service.updateInquiry(id, rn, title, content);
 		return "redirect:myInquiry";
 	}
+	
+	@RequestMapping("user/myInquiryDelProc")
+	public String myInquiryDelProc(String rn) {
+		String result = this.loginChk();
+		if(!result.equals("로그인")){
+			return "redirect:/member/login";
+		}
+		
+		String id = (String)session.getAttribute("id");
+		service.myInquiryDel(id, rn);
+		
+		return "redirect:myInquiry";
+	}
 }

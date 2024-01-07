@@ -44,7 +44,7 @@
 						<div class = "btn">
 							<c:if test = "${reply == 'N'}">
 								<input type = "button" value = "수정" onclick = "location.href = '${context}user/myInquiryUpdate?rn=${rn}'">
-								<input type = "button" value = "삭제">
+								<input type = "button" value = "삭제" onclick = "myInquiryDel()">
 							</c:if>
 							<input type = "button" value = "목록" id = "myInquiryBtn">
 						</div>
@@ -53,6 +53,16 @@
 		</div>
 	</div>
 </div>
+<script>
+	function myInquiryDel(){
+		if(confirm('해당 문의를 삭제하시겠습니까?')){
+			alert('삭제하였습니다.');
+			location.href = '${context}user/myInquiryDelProc?rn=${rn}';
+		} else {
+			alert('삭제를 취소하였습니다.');
+		}
+	}
+</script>
 <c:import url = "${context}footer"/>
 </body>
 </html>

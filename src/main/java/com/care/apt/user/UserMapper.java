@@ -28,4 +28,6 @@ public interface UserMapper {
 
 	void updateInquiry(int no, String title, String content);
 
+	void myInquiryDel(int no);
+
 }

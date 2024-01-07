@@ -47,6 +47,10 @@
 	</select>
 	
 	<update id = "updateInquiry">
-		UPDATE apt_inquiry set title = #{title}, content = #{content} where no = #{no}
+		UPDATE apt_inquiry SET title = #{title}, content = #{content} WHERE no = #{no}
 	</update>
+	
+	<delete id = "myInquiryDel">
+		DELETE apt_inquiry WHERE no = #{no}
+	</delete>
 </mapper>
